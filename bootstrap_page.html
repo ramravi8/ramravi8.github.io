@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title> Bootstrap Snippets </Title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body onload="prettyPrint()">
+<script type="javascript">
+function escapeHTMLCode(htmlText) {
+document.getElementById("escapeHtmlBox").innerHtml = jquery(htmlText).text();
+
+}
+</script>
+
+<script>
+function escapeHTMLCode(getId, updateId) {
+	
+	htmlCode = document.getElementById(getId).value;
+    htmlCode = htmlCode.replace(/&/g, '&amp');
+	htmlCode = htmlCode.replace(/</g, '&lt');
+	htmlCode = htmlCode.replace(/>/g, '&gt');
+	htmlCode = htmlCode.replace(/"/g, "&quot;");
+	htmlCode = htmlCode.replace(/'/g, "&#039;");
+    document.getElementById(updateId).value = htmlCode;
+}
+</script>
+
+<div class="container">
+	<div class="jumbotron" style="background-color:#8e44ad ">
+		<H1 style="color :white">Hello Bootstrap!</H1>
+		<p style="color :white">Container example with Jumbotron class</p>
+	</div>
+	
+	<nav class="navbar navbar-default">
+	<ul class="nav navbar-nav">
+		<li><a href="Bootstrap_page.html">Bootstrap</a></li>
+		<li><a href="html_page.html">HTML</a></li>
+		<li><a href="#">Java Snippets</a></li>
+	</ul>
+	</nav>
+	
+	<textarea class="form-control" rows="3" id ="escapeHtmlBox" ></textarea>
+	<button class="btn btn-success" onclick="escapeHTMLCode('escapeHtmlBox','escapeHtmlBox')">Escape Html Code</button>
+	<br>
+	<br>
+	
+	<div class="panel panel-info">
+		<div class="panel-heading">Below Quote block - using <kbd>BLOCKQUOTE</kbd> Tag</div>
+		<br>
+		<blockquote>Elliot, a cyber-security engineer suffering from anxiety, works for a corporation and hacks felons by night. Panic strikes him after a cryptic anarchist recruits him to destroy the same corporation. <br> - Mr Robot</blockquote>
+	</div>
+
+	<pre class="prettyprint prettyprinted"> &lthtml&gt We’re all living in each other’s paranoia. You definitely can’t argue that. Is that why everyone tries to avoid each other?&lt/pre&gt </pre>
+	
+	<p>This is code block - using <kbd>PRE</kbd> Tag</p>
+	<pre>We’re all living in each other’s paranoia. You definitely can’t argue that. Is that why everyone tries to avoid each other?</pre>
+	
+	
+	<br><hr>
+	<p>Below line is using <kbd>CODE</kbd> Tag</p>
+	<code>System.out.println("Hello World!");</code>
+	<br>
+	<br><hr>
+	<p>Below Description list using <kbd>DL-DT-DD</kbd> Tag</p>
+	<dl>
+		<dt>Gender</dt>
+		<dd>-Male</dd>
+		<dd>-Female</dd>
+		<dt>Transport</dt>
+		<dd>Air</dd>
+		<dd>Train</dd>
+		<dd>Road</dd>
+	</dl>
+	<br><hr>
+	
+	
+</div>
+</body>
+</html>
